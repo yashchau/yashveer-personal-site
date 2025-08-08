@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Hero from "@/components/sections/Hero";
 import CTABar from "@/components/sections/CTABar";
 import StatChips from "@/components/common/StatChips";
@@ -43,7 +44,7 @@ export default function Home() {
           ))}
         </div>
         <div className="text-center mt-12">
-          <a
+          <Link
             href="/projects"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-[var(--muted)] hover:border-[var(--primary)] hover:bg-[var(--primary)]/5 font-semibold transition-all duration-200 group"
           >
@@ -53,7 +54,7 @@ export default function Home() {
             <span className="group-hover:translate-x-1 transition-transform">
               →
             </span>
-          </a>
+          </Link>
         </div>
       </section>
 
