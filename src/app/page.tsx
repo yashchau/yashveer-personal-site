@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      
+
       {/* Stats Section */}
       <section className="mt-12">
         <h2 className="text-2xl font-semibold mb-6">Quick Stats</h2>
