@@ -1,13 +1,10 @@
-import Hero from "@/components/Hero";
-import CTABar from "@/components/CTABar";
-import StatChips from "@/components/StatChips";
-import ProjectCard from "@/components/ProjectCard";
-import VentureTile from "@/components/VentureTile";
-import Testimonial from "@/components/Testimonial";
-import projects from "@/data/projects";
-import ventures from "@/data/ventures";
-import testimonials from "@/data/testimonials";
-import stats from "@/data/statChips";
+import Hero from "@/components/sections/Hero";
+import CTABar from "@/components/sections/CTABar";
+import StatChips from "@/components/common/StatChips";
+import ProjectCard from "@/components/cards/ProjectCard";
+import VentureTile from "@/components/cards/VentureTile";
+import Testimonial from "@/components/cards/Testimonial";
+import { projects, ventures, testimonials, stats } from "@/data";
 
 export default function Home() {
   return (

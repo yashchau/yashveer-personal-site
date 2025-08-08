@@ -1,15 +1,12 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import ProjectCard from "@/components/ProjectCard";
-import projects from "@/data/projects";
+import ProjectCard from "@/components/cards/ProjectCard";
+import { projects } from "@/data";
+import { PROJECT_FILTERS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
-const filterOptions = ["AI", "Software", "Data", "Mobile", "Research"];
-const sortOptions = [
-    { value: "recency", label: "Recency" },
-    { value: "impact", label: "Impact" }
-];
+const { tags: filterOptions, sortOptions } = PROJECT_FILTERS;
 
 export default function ProjectsPage() {
     const [selectedFilters, setSelectedFilters] = useState<string[]>([]);

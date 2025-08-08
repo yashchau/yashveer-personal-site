@@ -1,11 +1,12 @@
 import "@/app/globals.css";
 import type { Metadata } from "next";
 import Link from "next/link";
-import ThemeProviderWrapper from "@/components/ThemeProviderWrapper";
+import ThemeProviderWrapper from "@/components/common/ThemeProviderWrapper";
+import { SITE_CONFIG } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Yashveer | AI Builder",
-  description: "Story-first portfolio - From military bases to building AI products",
+  title: SITE_CONFIG.title,
+  description: SITE_CONFIG.description,
 };
 
 export default function RootLayout({
@@ -22,24 +23,15 @@ export default function RootLayout({
               <nav className="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between glass">
                 <div className="font-semibold">YC</div>
                 <div className="flex gap-4 text-sm">
-                  <Link href="/" className="opacity-90 hover:opacity-100 transition-opacity">
-                    Home
-                  </Link>
-                  <Link href="/projects" className="opacity-90 hover:opacity-100 transition-opacity">
-                    Projects
-                  </Link>
-                  <Link href="/ventures" className="opacity-90 hover:opacity-100 transition-opacity">
-                    Ventures
-                  </Link>
-                  <Link href="/blog" className="opacity-90 hover:opacity-100 transition-opacity">
-                    Blog
-                  </Link>
-                  <Link href="/teaching" className="opacity-90 hover:opacity-100 transition-opacity">
-                    Teaching
-                  </Link>
-                  <Link href="/resume" className="opacity-90 hover:opacity-100 transition-opacity">
-                    Résumé
-                  </Link>
+                  {SITE_CONFIG.navigation.main.map(({ href, label }) => (
+                    <Link
+                      key={href}
+                      href={href}
+                      className="opacity-90 hover:opacity-100 transition-opacity"
+                    >
+                      {label}
+                    </Link>
+                  ))}
                 </div>
               </nav>
             </header>
