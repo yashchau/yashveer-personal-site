@@ -1,11 +1,27 @@
+"use client";
+
 import Link from "next/link";
 import { Project } from "@/types/content";
+import { usePostHog } from "@/lib/posthog";
 
 interface ProjectCardProps {
   project: Project;
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
+  const { capture } = usePostHog();
+
+  const handleProjectClick = (action: string, target?: string) => {
+    capture('project_interaction', {
+      project_title: project.title,
+      project_slug: project.slug,
+      action: action,
+      target: target,
+      tags: project.tags,
+      tech_stack: project.stack
+    });
+  };
+
   return (
     <div className="group relative overflow-hidden rounded-2xl bg-[var(--surface)] border border-[var(--muted)]/20 hover:border-[var(--primary)]/30 hover:bg-[var(--primary)]/5 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
       {/* Background gradient on hover */}
@@ -83,6 +99,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 href={project.repo}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => handleProjectClick('repository_click', project.repo || undefined)}
                 className="p-2 rounded-lg hover:bg-[var(--primary)]/10 hover:text-[var(--primary)] transition-colors duration-200"
                 aria-label="View code"
               >
@@ -96,6 +113,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => handleProjectClick('project_link_click', project.link || undefined)}
                 className="p-2 rounded-lg hover:bg-[var(--primary)]/10 hover:text-[var(--primary)] transition-colors duration-200"
                 aria-label="View project"
               >
@@ -106,6 +124,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             )}
             <Link
               href={`/projects/${project.slug}`}
+              onClick={() => handleProjectClick('details_click', `/projects/${project.slug}`)}
               className="p-2 rounded-lg hover:bg-[var(--primary)]/10 hover:text-[var(--primary)] transition-colors duration-200"
               aria-label="View details"
             >

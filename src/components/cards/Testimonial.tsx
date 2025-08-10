@@ -13,11 +13,11 @@ export default function Testimonial({ testimonial }: TestimonialProps) {
             <div className="relative p-6">
                 {/* Quote */}
                 <div className="mb-6">
-                              <div className="text-2xl text-[var(--highlight)] mb-2">&ldquo;</div>
-          <p className="text-sm opacity-80 leading-relaxed">
-            {testimonial.quote}
-          </p>
-          <div className="text-2xl text-[var(--highlight)] mt-2 text-right">&rdquo;</div>
+                    <div className="text-2xl text-[var(--highlight)] mb-2">&ldquo;</div>
+                    <p className="text-sm opacity-80 leading-relaxed">
+                        {testimonial.quote}
+                    </p>
+                    <div className="text-2xl text-[var(--highlight)] mt-2 text-right">&rdquo;</div>
                 </div>
 
                 {/* Author */}
