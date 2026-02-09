@@ -6,24 +6,24 @@ interface StatChipsProps {
 
 export default function StatChips({ stats }: StatChipsProps) {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+    <div className="grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-6">
       {stats.map((stat, index) => (
         <div
           key={stat.label}
-          className="group relative p-6 rounded-2xl bg-[var(--surface)] border border-[var(--muted)]/20 hover:border-[var(--primary)]/30 hover:bg-[var(--primary)]/5 transition-all duration-300 hover:scale-105"
+          className="surface-card group p-4 md:p-5"
           style={{ animationDelay: `${index * 100}ms` }}
         >
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-[var(--primary)] mb-2 group-hover:scale-110 transition-transform duration-300">
-              {stat.value}+
+          <div className="relative text-center">
+            <div className="text-2xl font-semibold text-[var(--primary)] transition-transform duration-300 group-hover:scale-105 md:text-3xl">
+              {stat.value}
+              <span className="text-xl text-[var(--secondary)] md:text-2xl">+</span>
             </div>
-            <div className="text-sm opacity-70 font-medium">
+            <div className="mt-2 text-xs font-medium uppercase tracking-[0.06em] text-[var(--muted)] md:text-[11px]">
               {stat.label}
             </div>
           </div>
 
-          {/* Hover effect */}
-          <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[var(--primary)]/10 to-[var(--secondary)]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-[var(--primary)]/10 to-[var(--secondary)]/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
         </div>
       ))}
     </div>

@@ -1,79 +1,93 @@
 import Link from "next/link";
 
+const focusAreas = [
+  {
+    title: "Now Building",
+    detail: "AI products that improve learning loops and decision quality.",
+    tone: "primary",
+  },
+  {
+    title: "Current Obsession",
+    detail: "Where product intuition, data systems, and market behavior overlap.",
+    tone: "secondary",
+  },
+  {
+    title: "Open To",
+    detail: "Advisory, product partnerships, and teaching collaborations.",
+    tone: "accent",
+  },
+] as const;
+
+const toneClass = {
+  primary: "text-[var(--primary)]",
+  secondary: "text-[var(--secondary)]",
+  accent: "text-[var(--accent)]",
+} as const;
+
 export default function Hero() {
-    return (
-        <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
-            {/* Background Effects */}
-            <div className="absolute inset-0 -z-10" aria-hidden>
-                <div className="absolute top-0 left-1/4 w-96 h-96 bg-[var(--secondary)]/20 rounded-full blur-3xl animate-pulse" />
-                <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[var(--accent)]/20 rounded-full blur-3xl animate-pulse delay-1000" />
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[var(--highlight)]/10 rounded-full blur-3xl animate-pulse delay-500" />
+  return (
+    <section className="relative overflow-hidden rounded-[34px] border border-[var(--line)] bg-[var(--surface-elevated)] px-6 py-12 sm:px-8 md:px-12 md:py-16">
+      <div className="absolute inset-0" aria-hidden>
+        <div className="animate-float absolute -left-28 top-8 h-64 w-64 rounded-full bg-[var(--primary)]/20 blur-3xl" />
+        <div className="absolute -right-24 top-1/3 h-64 w-64 rounded-full bg-[var(--secondary)]/20 blur-3xl" />
+        <div className="absolute bottom-0 left-1/2 h-52 w-52 -translate-x-1/2 rounded-full bg-[var(--accent)]/20 blur-3xl" />
+      </div>
+
+      <div className="relative grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
+        <div className="space-y-8 animate-fade-in-up">
+          <span className="eyebrow">AI Builder • Educator • Operator</span>
+
+          <div className="space-y-5">
+            <h1 className="text-4xl font-semibold leading-tight tracking-tight sm:text-5xl md:text-6xl">
+              From military bases to building
+              <span className="block gradient-text">AI products people actually use.</span>
+            </h1>
+            <p className="max-w-2xl text-lg leading-relaxed text-[var(--muted)] md:text-xl">
+              I design and ship products that help people learn faster, invest smarter, and make
+              better decisions under uncertainty.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap gap-3">
+            <Link className="primary-button" href="/projects">
+              View my work
+              <span aria-hidden>→</span>
+            </Link>
+            <Link className="secondary-button" href="/teaching">
+              Learn with me
+              <span aria-hidden>→</span>
+            </Link>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-3">
+            <div className="rounded-xl border border-[var(--line)] bg-[var(--surface)]/70 p-4">
+              <div className="text-2xl font-semibold text-[var(--primary)]">7+</div>
+              <div className="mt-1 text-sm text-[var(--muted)]">Years building in tech</div>
             </div>
-
-            {/* Content */}
-            <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
-                <div className="mb-8">
-                    <span className="inline-block px-4 py-2 rounded-full bg-[var(--primary)]/10 text-[var(--primary)] text-sm font-medium mb-6">
-                        🚀 AI Builder & Educator
-                    </span>
-                </div>
-
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 bg-gradient-to-r from-[var(--primary)] via-[var(--secondary)] to-[var(--accent)] bg-clip-text text-transparent">
-                    From military bases
-                    <br />
-                    to building AI products
-                </h1>
-
-                <p className="text-xl md:text-2xl opacity-80 mb-8 max-w-3xl mx-auto leading-relaxed">
-                    I design, ship, and teach tools that help people learn faster and invest smarter.
-                    <span className="block mt-2 text-lg opacity-60">
-                        Let&apos;s build something amazing together.
-                    </span>
-                </p>
-
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-                    <Link
-                        className="px-8 py-4 rounded-xl bg-[var(--primary)] text-white font-semibold hover:bg-[var(--primary)]/90 hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
-                        href="/projects"
-                    >
-                        View My Work →
-                    </Link>
-                    <Link
-                        className="px-8 py-4 rounded-xl border-2 border-[var(--muted)] hover:border-[var(--primary)] hover:bg-[var(--primary)]/5 font-semibold transition-all duration-200 group"
-                        href="/teaching"
-                    >
-                        <span className="group-hover:text-[var(--primary)] transition-colors">
-                            Learn with me
-                        </span>
-                        <span className="ml-2 group-hover:translate-x-1 transition-transform inline-block">
-                            →
-                        </span>
-                    </Link>
-                </div>
-
-                {/* Quick Stats */}
-                <div className="flex flex-wrap justify-center gap-8 text-sm opacity-60">
-                    <div className="flex items-center gap-2">
-                        <span className="w-2 h-2 bg-[var(--success)] rounded-full"></span>
-                        <span>5+ Years Experience</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                        <span className="w-2 h-2 bg-[var(--secondary)] rounded-full"></span>
-                        <span>20+ Projects Shipped</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                        <span className="w-2 h-2 bg-[var(--accent)] rounded-full"></span>
-                        <span>100+ Students Taught</span>
-                    </div>
-                </div>
+            <div className="rounded-xl border border-[var(--line)] bg-[var(--surface)]/70 p-4">
+              <div className="text-2xl font-semibold text-[var(--secondary)]">15+</div>
+              <div className="mt-1 text-sm text-[var(--muted)]">Products shipped</div>
             </div>
-
-            {/* Scroll Indicator */}
-            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-                <div className="w-6 h-10 border-2 border-[var(--muted)] rounded-full flex justify-center">
-                    <div className="w-1 h-3 bg-[var(--muted)] rounded-full mt-2 animate-pulse"></div>
-                </div>
+            <div className="rounded-xl border border-[var(--line)] bg-[var(--surface)]/70 p-4">
+              <div className="text-2xl font-semibold text-[var(--accent)]">100+</div>
+              <div className="mt-1 text-sm text-[var(--muted)]">Students mentored</div>
             </div>
-        </section>
-    );
+          </div>
+        </div>
+
+        <aside className="grid gap-4 animate-fade-in-scale lg:max-w-md lg:justify-self-end">
+          {focusAreas.map((item) => (
+            <article key={item.title} className="surface-card p-5">
+              <h2 className={`text-sm font-semibold uppercase tracking-[0.14em] ${toneClass[item.tone]}`}>
+                {item.title}
+              </h2>
+              <p className="mt-2 text-sm leading-relaxed text-[var(--muted)] md:text-base">
+                {item.detail}
+              </p>
+            </article>
+          ))}
+        </aside>
+      </div>
+    </section>
+  );
 }

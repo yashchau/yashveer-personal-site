@@ -12,3 +12,4 @@ export { default as ProjectCard } from './cards/ProjectCard';
 export { default as VentureTile } from './cards/VentureTile';
 export { default as LessonCard } from './cards/LessonCard';
 export { default as Testimonial } from './cards/Testimonial';
+export { default as BlogCard } from './cards/BlogCard';
