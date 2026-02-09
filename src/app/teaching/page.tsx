@@ -7,12 +7,6 @@ export const metadata = {
   description: "Practical lessons on AI, data systems, and financial markets for builders.",
 };
 
-const difficultyColors = {
-  Beginner: "from-[var(--success)] to-[var(--success)]",
-  Intermediate: "from-[var(--secondary)] to-[var(--accent)]",
-  Advanced: "from-[var(--danger)] to-[var(--highlight)]"
-} as const;
-
 const difficultyStats = lessons.reduce((acc, lesson) => {
   acc[lesson.difficulty] = (acc[lesson.difficulty] || 0) + 1;
   return acc;

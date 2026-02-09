@@ -139,7 +139,7 @@ export default function BlogPostPage({ params }: BlogPageProps) {
               <div className="space-y-4">
                 <h3 className="text-2xl font-bold text-[var(--text)]">Enjoyed this idea?</h3>
                 <p className="text-lg text-[var(--text)]/70 max-w-2xl mx-auto">
-                  Share your perspective or challenge the assumptions – I'd love to iterate on the concept with you.
+                  Share your perspective or challenge the assumptions – I&apos;d love to iterate on the concept with you.
                 </p>
               </div>
               <a

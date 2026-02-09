@@ -52,7 +52,7 @@ export default function StoryPage() {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">The Philosophy</h2>
           <p className="text-lg text-[var(--text)]/70 max-w-3xl mx-auto">
-            Constant movement taught me that adaptability isn't just surviving change—it's thriving through transformation
+            Constant movement taught me that adaptability isn&apos;t just surviving change, it&apos;s thriving through transformation
           </p>
         </div>
 
@@ -76,7 +76,7 @@ export default function StoryPage() {
             <div className="space-y-3">
               <h3 className="text-xl font-semibold">Embrace Beginnings</h3>
               <p className="text-[var(--text)]/70">
-                Being the "new kid" repeatedly taught me to approach unfamiliar situations with curiosity, not fear
+                Being the &ldquo;new kid&rdquo; repeatedly taught me to approach unfamiliar situations with curiosity, not fear
               </p>
             </div>
           </div>
@@ -107,7 +107,7 @@ export default function StoryPage() {
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Timeline Navigation */}
           <div className="space-y-4">
-            {timeline.map((stop, index) => (
+            {timeline.map((stop) => (
               <div
                 key={`${stop.city}-${stop.years}`}
                 className={`group cursor-pointer p-6 rounded-2xl border transition-all duration-300 ${
@@ -190,7 +190,7 @@ export default function StoryPage() {
                     <div className="space-y-2">
                       <h5 className="font-semibold text-[var(--text)]">Research Mindset</h5>
                       <p className="text-sm text-[var(--text)]/70">
-                        Master's in Data Science, diving deep into machine learning, and learning to ask better questions.
+                        Master&apos;s in Data Science, diving deep into machine learning, and learning to ask better questions.
                       </p>
                     </div>
                   )}
@@ -212,15 +212,15 @@ export default function StoryPage() {
       {/* Current Focus */}
       <section className="relative animate-fade-in-up" style={{animationDelay: '0.6s'}}>
         <div className="text-center space-y-8">
-          <h2 className="text-3xl md:text-4xl font-bold">What's Next?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold">What&apos;s Next?</h2>
           <div className="max-w-3xl mx-auto space-y-6">
             <p className="text-xl text-[var(--text)]/80 leading-relaxed">
               The journey of movement shaped a unique perspective: that the best solutions come from understanding
               multiple contexts, embracing uncertainty, and building bridges between different worlds.
             </p>
             <p className="text-lg text-[var(--text)]/70">
-              Today, I'm focused on building AI systems that help people navigate complexity with confidence—
-              whether that's financial markets, business decisions, or learning new skills.
+              Today, I&apos;m focused on building AI systems that help people navigate complexity with confidence,
+              whether that&apos;s financial markets, business decisions, or learning new skills.
             </p>
           </div>
         </div>

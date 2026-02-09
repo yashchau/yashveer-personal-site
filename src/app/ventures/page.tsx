@@ -27,7 +27,7 @@ export default function VenturesPage() {
           </h1>
           <p className="mx-auto max-w-4xl text-xl md:text-2xl leading-relaxed text-[var(--text)]/70 font-light">
             Each venture is an experiment in combining measurable outcomes with human intuition.
-            Here's what I'm building right now and how you can get involved.
+            Here&apos;s what I&apos;m building right now and how you can get involved.
           </p>
         </div>
 
