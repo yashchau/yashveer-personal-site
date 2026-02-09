@@ -4,9 +4,9 @@ import Link from "next/link";
 import { blogPosts } from "@/data";
 
 interface BlogPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 const formatBlock = (block: string, index: number) => {
@@ -37,8 +37,9 @@ export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
 }
 
-export function generateMetadata({ params }: BlogPageProps): Metadata {
-  const post = blogPosts.find((item) => item.slug === params.slug);
+export async function generateMetadata({ params }: BlogPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const post = blogPosts.find((item) => item.slug === slug);
 
   if (!post) {
     return {};
@@ -50,8 +51,9 @@ export function generateMetadata({ params }: BlogPageProps): Metadata {
   };
 }
 
-export default function BlogPostPage({ params }: BlogPageProps) {
-  const post = blogPosts.find((item) => item.slug === params.slug) ?? notFound();
+export default async function BlogPostPage({ params }: BlogPageProps) {
+  const { slug } = await params;
+  const post = blogPosts.find((item) => item.slug === slug) ?? notFound();
 
   const blocks = post.content?.split(/\n\n+/).filter(Boolean) ?? [];
 

@@ -2,13 +2,14 @@ import { notFound } from "next/navigation";
 import projects from "@/data/projects";
 
 interface ProjectPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
-export default function ProjectPage({ params }: ProjectPageProps) {
-  const project = projects.find((p) => p.slug === params.slug) ?? notFound();
+export default async function ProjectPage({ params }: ProjectPageProps) {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug) ?? notFound();
 
   return (
     <div className="space-y-8">
