@@ -25,8 +25,7 @@ export default function StoryPage() {
             </span>
           </h1>
           <p className="mx-auto max-w-4xl text-xl md:text-2xl leading-relaxed text-[var(--text)]/70 font-light">
-            From military bases to tech hubs, each move shaped a unique perspective on adaptability,
-            learning, and building systems that solve real problems.
+            I grew up in an army family — which meant a new city every two or three years, a new school, a new social terrain. By the time I was 23 I&apos;d lived in eight cities across India, then moved to the US for graduate school, and eventually settled in Jersey City. Ten cities total. Each one left a mark. This is what they taught me.
           </p>
         </div>
 
@@ -209,19 +208,32 @@ export default function StoryPage() {
         </div>
       </section>
 
-      {/* Current Focus */}
+      {/* Current Chapter */}
       <section className="relative animate-fade-in-up" style={{animationDelay: '0.6s'}}>
-        <div className="text-center space-y-8">
-          <h2 className="text-3xl md:text-4xl font-bold">What&apos;s Next?</h2>
-          <div className="max-w-3xl mx-auto space-y-6">
-            <p className="text-xl text-[var(--text)]/80 leading-relaxed">
-              The journey of movement shaped a unique perspective: that the best solutions come from understanding
-              multiple contexts, embracing uncertainty, and building bridges between different worlds.
-            </p>
-            <p className="text-lg text-[var(--text)]/70">
-              Today, I&apos;m focused on building AI systems that help people navigate complexity with confidence,
-              whether that&apos;s financial markets, business decisions, or learning new skills.
-            </p>
+        <div className="relative overflow-hidden rounded-3xl border border-[var(--primary)]/20 bg-gradient-to-br from-[var(--primary)]/5 to-[var(--accent)]/5 p-8 md:p-12 backdrop-blur-sm">
+          <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/10 via-transparent to-[var(--accent)]/10" />
+          <div className="relative grid md:grid-cols-2 gap-10 items-center">
+            <div className="space-y-5">
+              <span className="inline-block text-sm font-semibold uppercase tracking-[0.14em] text-[var(--primary)]">Current Chapter</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-[var(--text)] leading-tight">Jersey City, NJ — 2021 to now</h2>
+              <p className="text-lg text-[var(--text)]/70 leading-relaxed">
+                Building enterprise compliance products at ADP by day. Building Stak, BetWise, and an AI investment research platform on nights and weekends. The military-kid adaptability that made 10 cities feel manageable makes juggling multiple bets feel natural.
+              </p>
+            </div>
+            <div className="space-y-4">
+              <div className="p-5 rounded-2xl bg-[var(--surface)]/60 border border-[var(--muted)]/10">
+                <div className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--primary)] mb-2">Shipping now</div>
+                <p className="text-sm text-[var(--text)]/80">Stak iOS app, AI Options Tracker, India Pulse economic dashboard</p>
+              </div>
+              <div className="p-5 rounded-2xl bg-[var(--surface)]/60 border border-[var(--muted)]/10">
+                <div className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--accent)] mb-2">Obsession</div>
+                <p className="text-sm text-[var(--text)]/80">Where options flow data, SEC filings, and LLM agents meet retail investing</p>
+              </div>
+              <div className="p-5 rounded-2xl bg-[var(--surface)]/60 border border-[var(--muted)]/10">
+                <div className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--secondary)] mb-2">Open to</div>
+                <p className="text-sm text-[var(--text)]/80">Advisory, co-building, and product partnerships in AI and fintech</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

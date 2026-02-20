@@ -4,7 +4,7 @@ import { BLOG_CHANNELS } from "@/lib/constants";
 
 export const metadata = {
   title: "Blog | Yashveer Chauhan",
-  description: "Writing at the intersection of AI, knowledge design, and investing.",
+  description: "Long-form writing on AI product building, options trading, and lessons from a career spanning military R&D to enterprise fintech.",
 };
 
 const channelEntries = Object.values(BLOG_CHANNELS);

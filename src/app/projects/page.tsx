@@ -49,7 +49,7 @@ export default function ProjectsPage() {
             <header>
                 <h1 className="text-4xl font-semibold mb-4">Projects</h1>
                 <p className="text-lg opacity-80">
-                    A collection of projects I&apos;ve built, from AI tools to data systems.
+                    {projects.length} projects across AI, fintech, data engineering, mobile, military R&D, and academic research.
                 </p>
             </header>
 

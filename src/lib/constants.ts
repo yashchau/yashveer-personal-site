@@ -2,14 +2,14 @@
 
 export const SITE_CONFIG = {
   name: "Yashveer Chauhan",
-  title: "Yashveer | AI Builder",
-  description: "Story-first portfolio - From military bases to building AI products",
-  url: "https://yashveer.dev", // Update with your actual domain
+  title: "Yashveer Chauhan — AI Builder & Product Engineer",
+  description: "I build AI products at the intersection of finance, data, and real-world decisions. Application developer at ADP. Building Stak, BetWise, and AI investment tools.",
+  url: "https://yashveer.dev",
   author: {
     name: "Yashveer Chauhan",
-    email: "hello@yashveer.dev", // Update with your actual email
+    email: "hello@yashveer.dev",
     github: "https://github.com/yashchau",
-    linkedin: "https://linkedin.com/in/yashveer-chauhan",
+    linkedin: "https://linkedin.com/in/yashveerchauhan",
   },
   navigation: {
     main: [
@@ -17,14 +17,14 @@ export const SITE_CONFIG = {
       { href: "/projects", label: "Projects" },
       { href: "/ventures", label: "Ventures" },
       { href: "/blog", label: "Blog" },
-      { href: "/teaching", label: "Teaching" },
+      { href: "/story", label: "My Story" },
       { href: "/resume", label: "Résumé" },
     ],
   },
 } as const;
 
 export const PROJECT_FILTERS = {
-  tags: ["AI", "Software", "Data", "Mobile", "Research"] as const,
+  tags: ["AI", "Fintech", "Mobile", "Data", "Software", "Research", "Military", "Investing"] as const,
   sortOptions: [
     { value: "recency", label: "Recency" },
     { value: "impact", label: "Impact" },
@@ -34,7 +34,6 @@ export const PROJECT_FILTERS = {
 export const BLOG_CHANNELS = {
   all: "All",
   ai: "AI",
-  quantum: "Quantum",
   investing: "Investing",
   buildLogs: "Build Logs",
 } as const;

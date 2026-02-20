@@ -4,8 +4,8 @@ import CTABar from "@/components/sections/CTABar";
 import StatChips from "@/components/common/StatChips";
 import ProjectCard from "@/components/cards/ProjectCard";
 import VentureTile from "@/components/cards/VentureTile";
-import Testimonial from "@/components/cards/Testimonial";
-import { projects, ventures, testimonials, stats } from "@/data";
+import BlogCard from "@/components/cards/BlogCard";
+import { projects, ventures, stats, blogPosts } from "@/data";
 
 interface SectionHeaderProps {
   eyebrow: string;
@@ -24,6 +24,8 @@ function SectionHeader({ eyebrow, title, description }: SectionHeaderProps) {
 }
 
 export default function Home() {
+  const featuredPosts = blogPosts.slice(0, 2);
+
   return (
     <div className="space-y-24 pb-6">
       <Hero />
@@ -31,9 +33,9 @@ export default function Home() {
       <section className="section-shell">
         <div className="relative space-y-10">
           <SectionHeader
-            eyebrow="Momentum"
-            title="A snapshot of my work so far"
-            description="A quick look at the metrics behind product execution, technical depth, and teaching impact."
+            eyebrow="By the Numbers"
+            title="A snapshot of 10+ years building"
+            description="Enterprise software, indie products, academic research, and military-grade deployments."
           />
           <StatChips stats={stats} />
         </div>
@@ -44,18 +46,18 @@ export default function Home() {
           <SectionHeader
             eyebrow="Portfolio"
             title="Featured projects"
-            description="Case studies across AI, software, and data-heavy systems with clear outcomes and real users."
+            description="From AI investment tools to military field systems — software built for real constraints and real users."
           />
 
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {projects.slice(0, 3).map((project) => (
+            {projects.slice(0, 6).map((project) => (
               <ProjectCard key={project.slug} project={project} />
             ))}
           </div>
 
           <div className="flex justify-center md:justify-start">
             <Link href="/projects" className="secondary-button">
-              View all projects
+              View all {projects.length} projects
               <span aria-hidden>→</span>
             </Link>
           </div>
@@ -65,34 +67,50 @@ export default function Home() {
       <section className="section-shell">
         <div className="relative space-y-10">
           <SectionHeader
-            eyebrow="In Progress"
-            title="Current ventures"
-            description="Products I am actively building in public, with traction updates and clear near-term roadmaps."
+            eyebrow="Active Ventures"
+            title="What I'm building right now"
+            description="Three products at different stages — an iOS app, a sports marketplace, and an AI research platform."
           />
 
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {ventures.map((venture) => (
               <VentureTile key={venture.slug} venture={venture} />
             ))}
           </div>
-        </div>
-      </section>
 
-      <section className="section-shell">
-        <div className="relative space-y-10">
-          <SectionHeader
-            eyebrow="Social Proof"
-            title="What people say"
-            description="Feedback from collaborators, teammates, and students who have worked with me directly."
-          />
-
-          <div className="grid gap-6 md:grid-cols-2">
-            {testimonials.map((testimonial, index) => (
-              <Testimonial key={`${testimonial.name}-${index}`} testimonial={testimonial} />
-            ))}
+          <div className="flex justify-center md:justify-start">
+            <Link href="/ventures" className="secondary-button">
+              Venture details
+              <span aria-hidden>→</span>
+            </Link>
           </div>
         </div>
       </section>
+
+      {featuredPosts.length > 0 && (
+        <section className="section-shell">
+          <div className="relative space-y-10">
+            <SectionHeader
+              eyebrow="Writing"
+              title="Latest from the blog"
+              description="Long-form notes on AI product building, options trading, and lessons from a career spanning military R&D to enterprise fintech."
+            />
+
+            <div className="grid gap-6 md:grid-cols-2">
+              {featuredPosts.map((post) => (
+                <BlogCard key={post.slug} post={post} />
+              ))}
+            </div>
+
+            <div className="flex justify-center md:justify-start">
+              <Link href="/blog" className="secondary-button">
+                All posts
+                <span aria-hidden>→</span>
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
 
       <section>
         <CTABar />

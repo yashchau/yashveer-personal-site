@@ -3,17 +3,17 @@ import Link from "next/link";
 const focusAreas = [
   {
     title: "Now Building",
-    detail: "AI products that improve learning loops and decision quality.",
+    detail: "Stak (iOS budget app), AI Options Tracker, India Pulse dashboard.",
     tone: "primary",
   },
   {
     title: "Current Obsession",
-    detail: "Where product intuition, data systems, and market behavior overlap.",
+    detail: "Where product intuition, options flow data, and AI agents overlap.",
     tone: "secondary",
   },
   {
     title: "Open To",
-    detail: "Advisory, product partnerships, and teaching collaborations.",
+    detail: "Advisory, product partnerships, and co-building opportunities.",
     tone: "accent",
   },
 ] as const;
@@ -35,16 +35,16 @@ export default function Hero() {
 
       <div className="relative grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
         <div className="space-y-8 animate-fade-in-up">
-          <span className="eyebrow">AI Builder • Educator • Operator</span>
+          <span className="eyebrow">AI Builder • Product Engineer • Investor</span>
 
           <div className="space-y-5">
             <h1 className="text-4xl font-semibold leading-tight tracking-tight sm:text-5xl md:text-6xl">
-              From military bases to building
-              <span className="block gradient-text">AI products people actually use.</span>
+              I build AI products at the intersection of
+              <span className="block gradient-text">finance, data, and real-world decisions.</span>
             </h1>
             <p className="max-w-2xl text-lg leading-relaxed text-[var(--muted)] md:text-xl">
-              I design and ship products that help people learn faster, invest smarter, and make
-              better decisions under uncertainty.
+              Application developer at ADP by day. Building Stak, BetWise, and AI investment tools
+              by night. Military kid turned builder — 10 cities, 3 countries, 10+ years shipping software.
             </p>
           </div>
 
@@ -53,24 +53,24 @@ export default function Hero() {
               View my work
               <span aria-hidden>→</span>
             </Link>
-            <Link className="secondary-button" href="/teaching">
-              Learn with me
+            <Link className="secondary-button" href="/story">
+              My story
               <span aria-hidden>→</span>
             </Link>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-3">
             <div className="rounded-xl border border-[var(--line)] bg-[var(--surface)]/70 p-4">
-              <div className="text-2xl font-semibold text-[var(--primary)]">7+</div>
-              <div className="mt-1 text-sm text-[var(--muted)]">Years building in tech</div>
+              <div className="text-2xl font-semibold text-[var(--primary)]">10+</div>
+              <div className="mt-1 text-sm text-[var(--muted)]">Years in Tech</div>
             </div>
             <div className="rounded-xl border border-[var(--line)] bg-[var(--surface)]/70 p-4">
-              <div className="text-2xl font-semibold text-[var(--secondary)]">15+</div>
-              <div className="mt-1 text-sm text-[var(--muted)]">Products shipped</div>
+              <div className="text-2xl font-semibold text-[var(--secondary)]">12</div>
+              <div className="mt-1 text-sm text-[var(--muted)]">Products Shipped</div>
             </div>
             <div className="rounded-xl border border-[var(--line)] bg-[var(--surface)]/70 p-4">
-              <div className="text-2xl font-semibold text-[var(--accent)]">100+</div>
-              <div className="mt-1 text-sm text-[var(--muted)]">Students mentored</div>
+              <div className="text-2xl font-semibold text-[var(--accent)]">3</div>
+              <div className="mt-1 text-sm text-[var(--muted)]">Active Ventures</div>
             </div>
           </div>
         </div>

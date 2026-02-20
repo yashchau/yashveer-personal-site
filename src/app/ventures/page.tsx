@@ -4,7 +4,7 @@ import { ventures } from "@/data";
 
 export const metadata = {
   title: "Ventures | Yashveer Chauhan",
-  description: "Active ventures exploring data-first betting and AI-native investing.",
+  description: "Three active ventures: Stak (iOS budget app), BetWise (sports handicapper marketplace), and an AI investor research platform.",
 };
 
 export default function VenturesPage() {
@@ -20,14 +20,13 @@ export default function VenturesPage() {
 
         <div className="space-y-8 animate-fade-in-up" style={{animationDelay: '0.1s'}}>
           <h1 className="text-5xl font-bold md:text-6xl lg:text-7xl bg-gradient-to-br from-[var(--text)] to-[var(--text)]/60 bg-clip-text tracking-tight leading-tight">
-            Ventures at the Edge of{' '}
+            Three bets at the edge of{' '}
             <span className="bg-gradient-to-r from-[var(--secondary)] to-[var(--highlight)] bg-clip-text text-transparent">
-              Learning & Markets
+              finance and AI
             </span>
           </h1>
           <p className="mx-auto max-w-4xl text-xl md:text-2xl leading-relaxed text-[var(--text)]/70 font-light">
-            Each venture is an experiment in combining measurable outcomes with human intuition.
-            Here&apos;s what I&apos;m building right now and how you can get involved.
+            An iOS budget app nearing launch. A sports handicapper marketplace with 100+ early users. An AI research platform in private alpha. All built in spare hours, all solving real gaps.
           </p>
         </div>
 
@@ -59,12 +58,12 @@ export default function VenturesPage() {
             </p>
           </div>
 
-          <div className="grid gap-12 md:grid-cols-2">
+          <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
             {ventures.map((venture, index) => (
               <div
                 key={venture.slug}
                 className="animate-fade-in-scale"
-                style={{animationDelay: `${0.4 + index * 0.2}s`}}
+                style={{animationDelay: `${0.4 + index * 0.15}s`}}
               >
                 <VentureTile venture={venture} />
               </div>

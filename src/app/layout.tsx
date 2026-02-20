@@ -51,12 +51,12 @@ export default function RootLayout({
                 </Link>
                 <div className="flex items-center gap-2 md:gap-4">
                   <MainNav items={SITE_CONFIG.navigation.main} />
-                  <Link
-                    href="/projects"
-                    className="secondary-button px-4 py-2 text-sm md:hidden"
-                  >
-                    Work
-                  </Link>
+                  <div className="flex items-center gap-1 md:hidden">
+                    <Link href="/projects" className="secondary-button px-3 py-1.5 text-xs">Projects</Link>
+                    <Link href="/ventures" className="secondary-button px-3 py-1.5 text-xs">Ventures</Link>
+                    <Link href="/blog" className="secondary-button px-3 py-1.5 text-xs">Blog</Link>
+                    <Link href="/resume" className="secondary-button px-3 py-1.5 text-xs">Résumé</Link>
+                  </div>
                   <ThemeToggle />
                 </div>
               </nav>
@@ -71,18 +71,22 @@ export default function RootLayout({
                     © {new Date().getFullYear()} Yashveer Chauhan
                   </div>
                   <div className="text-[var(--muted)]">
-                    AI builder, educator, and product operator.
+                    Currently building Stak, BetWise & AI investment tools in Jersey City, NJ.
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-3 text-[var(--muted)]">
                   <a
                     href="https://github.com/yashchau"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="secondary-button px-4 py-2 text-sm"
                   >
                     GitHub
                   </a>
                   <a
-                    href="https://linkedin.com/in/yashchau"
+                    href="https://linkedin.com/in/yashveerchauhan"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="secondary-button px-4 py-2 text-sm"
                   >
                     LinkedIn

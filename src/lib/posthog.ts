@@ -1,25 +1,16 @@
-import posthog from 'posthog-js'
+// PostHog analytics removed. Stub kept so import sites don't need updating.
 
-export const usePostHog = () => {
-  return {
-    capture: (event: string, properties?: Record<string, unknown>) => {
-      if (typeof window !== 'undefined') {
-        posthog.capture(event, properties)
-      }
-    },
-    identify: (distinctId: string, properties?: Record<string, unknown>) => {
-      if (typeof window !== 'undefined') {
-        posthog.identify(distinctId, properties)
-      }
-    },
-    reset: () => {
-      if (typeof window !== 'undefined') {
-        posthog.reset()
-      }
-    }
-  }
-}
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const noop = (..._args: unknown[]) => {};
 
-// Direct access to PostHog for component usage
-export { posthog }
+export const usePostHog = () => ({
+  capture: noop,
+  identify: noop,
+  reset: noop,
+});
 
+export const posthog = {
+  capture: noop,
+  identify: noop,
+  reset: noop,
+};
